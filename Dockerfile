@@ -17,6 +17,7 @@ RUN         chmod 3770 /usr/local/sh && chmod 3770 /usr/local/sh/system \
             && chmod 3770 /usr/local/sh/apt-install && chmod 775 /usr/local/sh/system/apt-install.sh
 # シェルスクリプト環境にパスを通すためprofileをコピー
 # /usr/local/sh/system
+COPY        profile     /etc/profile
 COPY        rcprofile  /etc/rc.d
 COPY        .wgetrc   /root
 RUN         cp .wgetrc /etc/skel
