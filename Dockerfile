@@ -29,6 +29,6 @@ RUN         apt update \
             && wget ${PORG_SRC_URL} && tar -zxvf ${PORG_SRC_FILE} && cd porg-${PORG_VERSION} \
                 && ./configure --prefix=/usr/local --disable-grop   && make && make install \
             && /usr/local/sh/system/apt-install.sh uninstall gccdev.txt \
-            && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/* && rm -rf porg-* 
+            && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/* && cd ../ && rm -rf porg-* 
 #終了処理
 #RUN         apt clean && rm -rf /var/lib/apt/lists/* && rm -rf porg-* 
