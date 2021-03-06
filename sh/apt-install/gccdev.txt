@@ -14,4 +14,7 @@ autoconf
 make
 bison
 flex
+zlibc
+libzlcore-dev
+zlib1g-dev
 
