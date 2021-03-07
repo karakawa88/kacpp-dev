@@ -1,9 +1,9 @@
 *.log
 *.o
 *.gch
+venv
+*.pyc
 __pycache__
 mypyreport
 practice_python
-/dmarcreport.ini
-
 
