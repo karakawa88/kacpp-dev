@@ -49,7 +49,7 @@ RUNで一度開発環境を入れもう一度RUNで削除処理を行うとサ�
 GCC開発環境のインストールとコンパイルは同じRUNで行う。
 
 ## その他
-Dockerイメージ名: kagalpandh/kacpp-gccdev
-DockerHubのURL: [kacpp-gccdev](https://hub.docker.com/repository/docker/kagalpandh/kacpp-gccdev)
-github: https://github.com/karakawa88/kacpp-gccdev
+Dockerイメージ名: kagalpandh/kacpp-gccdev <br />
+DockerHubのURL: [kacpp-gccdev](https://hub.docker.com/repository/docker/kagalpandh/kacpp-gccdev) <br />
+github: https://github.com/karakawa88/kacpp-gccdev <br />
 
