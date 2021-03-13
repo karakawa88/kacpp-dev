@@ -6,10 +6,10 @@ SHELL       [ "/bin/bash", "-c" ]
 WORKDIR     /root
 ENV         DEBIAN_FORONTEND=noninteractive
 # porg関連環境変数
-ENV         PORG_VERSION=0.10
-ENV         PORG_SRC_BASE_URL="https://sourceforge.net/projects/porg/files/"
-ENV         PORG_SRC_FILE=porg-${PORG_VERSION}.tar.gz
-ENV         PORG_SRC_URL="https://sourceforge.net/projects/porg/files/${PORG_SRC_FILE}/download"
+# ENV         PORG_VERSION=0.10
+# ENV         PORG_SRC_BASE_URL="https://sourceforge.net/projects/porg/files/"
+# ENV         PORG_SRC_FILE=porg-${PORG_VERSION}.tar.gz
+# ENV         PORG_SRC_URL="https://sourceforge.net/projects/porg/files/${PORG_SRC_FILE}/download"
 # APTパッケージインストールスクリプト環境
 RUN         mkdir /usr/local/sh
 COPY        sh/    /usr/local/sh
@@ -27,10 +27,11 @@ RUN         cp .wgetrc /etc/skel
 RUN         apt update \
                 && apt install -y software-properties-common git wget gpg \
                 && /usr/local/sh/system/apt-install.sh install gccdev.txt \
-            && wget ${PORG_SRC_URL} && tar -zxvf ${PORG_SRC_FILE} && cd porg-${PORG_VERSION} \
-                && ./configure --prefix=/usr/local --disable-grop   && make && make install \
+#             && wget ${PORG_SRC_URL} && tar -zxvf ${PORG_SRC_FILE} && cd porg-${PORG_VERSION} \
+#                 && ./configure --prefix=/usr/local --disable-grop   && make && make install \
             && /usr/local/sh/system/apt-install.sh uninstall gccdev.txt \
-            && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/* && cd ../ && rm -rf porg-* 
+            && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/* && \
+#             cd ../ && rm -rf porg-* 
 ENV         SH=/usr/local/sh
 ENV         PATH=${PATH}:${SH}/system
 #終了処理
