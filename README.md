@@ -1,18 +1,17 @@
 # GCC開発環境Dockerイメージ作成リポジトリ
 ## 概要
 GCC開発環境作成Dockerイメージである。
+GCCバージョンは10である。
 DockerHubのリポジトリに置かれており名前はkagalpandh/kacpp-gccdev。
 GCC開発環境はインストールするとサイズが大きくなるため
 APTパッケージリストにインストールするパッケージを記述しておきそこから
 インスト・削除するスクリプトを用意した。
-さらにソースコードからインストールするものに対してporgもインストールしてある。
-このイメージにはGCC開発環境はインストールされていない。
 
 ## 使い方
 ```shell
 docker image pull kagalpandh/kacpp-gccdev
+docker run -dit kagalpandh/kacpp-gccdev /bin/bash
 ```
-Dockerイメージとして取得できる。
 
 ## このdockerイメージの構成
 GCC開発環境はサイズが大きくなるのでスクリプトでAPTパッケージリストファイルに
@@ -39,7 +38,7 @@ RUN     apt update \
         && /usr/local/sh/system/apt-install.sh install gccdev.txt \
         ...コンパイル作業
         # 終了処理
-        && /usr/local/sh/system/apt-install.sh uninstall gccdev.txt \
+#        && /usr/local/sh/system/apt-install.sh uninstall gccdev.txt \
         && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/*
 ```
 を実行する。終了処理はまずapt autoremove -y
