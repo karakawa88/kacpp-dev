@@ -22,7 +22,13 @@ export TERM=xterm-256color
 # export TERM=tmux-256color
 export XDG_CONFIG_HOME=~/.config
 
+# shell script
+export SH="/usr/local/sh"
+
+# cargo
+export PATH="/root/.cargo/bin"
+
 #path
-export PATH="/root/cargo/bin:/usr/local/bin:/bin:/usr/bin"
+export PATH="$PATH:$SH:$SH/system:/usr/local/bin:/bin:/usr/bin"
 export PATH="$PATH:/usr/local/sbin:/sbin:/usr/sbin"
 

@@ -23,6 +23,7 @@ export TERM=xterm-256color
 export XDG_CONFIG_HOME=~/.config
 
 #path
-export PATH="/root/cargo/bin:/usr/local/bin:/bin:/usr/bin"
+export PATH="$PATH:/usr/local/bin:/bin:/usr/bin"
 export PATH="$PATH:/usr/local/sbin:/sbin:/usr/sbin"
+export PATH="$PATH:/usr/local/sh/system"
 
