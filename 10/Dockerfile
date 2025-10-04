@@ -1,4 +1,5 @@
 # GCCコンパイラ環境を持つdebianイメージ
+# GCCバージョンは10。
 # 日本語化も設定済み
 # ソースコードのパッケージも管理するためporgも入れる
 FROM        kagalpandh/kacpp-ja:debian-buster-slim

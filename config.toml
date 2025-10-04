@@ -1,0 +1,8 @@
+# [target.aarch64-unknown-linux-gnu]
+# linker = "/bin/clang"
+# rustflags = ["-Clink-arg=-fuse-ld=/usr/local/bin/mold"]
+[target.'cfg(target_os = "linux")']
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+[build]
+rustc-wrapper = ".cargo/bin/sccache"
+
