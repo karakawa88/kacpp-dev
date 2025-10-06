@@ -6,4 +6,6 @@ venv
 __pycache__
 mypyreport
 practice_python
+test.sh
+gitpush.sh
 

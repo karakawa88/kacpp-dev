@@ -2,15 +2,15 @@
 ## 概要
 GCC開発環境作成Dockerイメージである。
 GCCバージョンは10である。
-DockerHubのリポジトリに置かれており名前はkagalpandh/kacpp-gccdev。
+DockerHubのリポジトリに置かれており名前はkagalpandh/kacpp-dev:10。
 GCC開発環境はインストールするとサイズが大きくなるため
 APTパッケージリストにインストールするパッケージを記述しておきそこから
 インスト・削除するスクリプトを用意した。
 
 ## 使い方
 ```shell
-docker image pull kagalpandh/kacpp-gccdev
-docker run -dit kagalpandh/kacpp-gccdev /bin/bash
+docker image pull kagalpandh/kacpp-dev:10
+docker run -dit kagalpandh/kacpp-dev:10 /bin/bash
 ```
 
 ## このdockerイメージの構成
@@ -32,13 +32,13 @@ installとuninstallはコマンドでfilesは引数でAPTパッケージリス�
 ## Dockerコンテナとしての使い方
 DokerfileにFromでベースにこのイメージを指定した後、
 ```shell
-FROM    kagalpandh/kacpp-gccdev
+FROM    kagalpandh/kacpp-dev:10
 ....
 RUN     apt update \
-        && /usr/local/sh/system/apt-install.sh install gccdev.txt \
+        && /usr/local/sh/system/apt-install.sh install aptlist.txt \
         ...コンパイル作業
         # 終了処理
-#        && /usr/local/sh/system/apt-install.sh uninstall gccdev.txt \
+#        && /usr/local/sh/system/apt-install.sh uninstall aptinstall.txt \
         && apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/*
 ```
 を実行する。終了処理はまずapt autoremove -y
@@ -48,7 +48,7 @@ RUNで一度開発環境を入れもう一度RUNで削除処理を行うとサ�
 GCC開発環境のインストールとコンパイルは同じRUNで行う。
 
 ## その他
-Dockerイメージ名: kagalpandh/kacpp-gccdev <br />
-DockerHubのURL: [kacpp-gccdev](https://hub.docker.com/repository/docker/kagalpandh/kacpp-gccdev) <br />
-github: https://github.com/karakawa88/kacpp-gccdev <br />
+Dockerイメージ名: kagalpandh/kacpp-dev:10 <br />
+DockerHubのURL: [kacpp-gccdev](https://hub.docker.com/repository/docker/kagalpandh/kacpp-dev:10) <br />
+github: https://github.com/karakawa88/kacpp-dev:10 <br />
 
